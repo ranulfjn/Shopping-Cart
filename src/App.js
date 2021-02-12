@@ -1,11 +1,13 @@
 import './App.css';
 
+import { Navbar, Products} from './components';
+
 function App() {
   return (
-    <div className="App">
-     
+    <div>
+       <Navbar />
+      <Products />  
     </div>
-  );
+  ); 
 }
-
 export default App;
