@@ -5,6 +5,16 @@ import Product from './Product/Product';
 const products=[
     { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
     { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
+    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
 ];
 
 const Products=()=>{
