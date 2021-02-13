@@ -3,22 +3,9 @@ import {Grid} from '@material-ui/core';
 import Product from './Product/Product';
 import useStyles from './styles'
 
-const products=[
-    { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 1 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 2 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 3 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-    { id: 4 , name:' shoes',description:'running shoes', price:'$12', image:'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i4jPhKEFw1NE/v0/150x-1.jpg'},
-];
 
-const Products=()=>{
+
+const Products=({products , onAddToCart})=>{
   const classes = useStyles();
     return (
         <main className={classes.content}>
@@ -26,7 +13,7 @@ const Products=()=>{
           <Grid container justify="center" spacing={4}>
             {products.map((product) => (
               <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
-                <Product product={product}  />
+                <Product product={product} onAddToCart={onAddToCart}  />
               </Grid>
             ))}
           </Grid>
