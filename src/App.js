@@ -10,6 +10,7 @@ import {BrowserRouter as Router , Switch ,Route} from 'react-router-dom'
 function App() {
   const [products , setProducts] = useState([]);
   const [cart, setCart] = useState({}); 
+
   const fetchProducts = async()=>{
     const {data} = await commerce.products.list();
     setProducts(data);
@@ -24,13 +25,28 @@ function App() {
     setCart(item.cart);
   }
 
+  const handleUpdateCartQty =async(productId , quantity) =>{
+    const item = await commerce.cart.update(productId,{quantity});
+    setCart(item.cart);
+  }
+
+  const handleRemove =async(productId) =>{
+    const item = await commerce.cart.remove(productId);
+    setCart(item.cart);
+  }
+
+  const handleEmptyCart =async() =>{
+    const item = await commerce.cart.empty();
+    setCart(item.cart);
+  }
+
+
   useEffect(()=>{
     fetchProducts(); 
     fetchCart();
   },[]);
 
-  console.log(products);
-  console.log(cart);
+
 
   return (
     <Router>
@@ -42,7 +58,11 @@ function App() {
           </Route>
 
           <Route exact path="/cart">
-              <Cart cart={cart}/>
+              <Cart cart={cart} 
+              handleEmptyCart={handleEmptyCart}
+              handleRemove={handleRemove}
+              handleUpdateCartQty={handleUpdateCartQty}
+              />
           </Route>
       
         </Switch>

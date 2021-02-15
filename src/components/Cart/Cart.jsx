@@ -5,15 +5,15 @@ import CartItem from './CartItem/CartItem';
 import  { Link } from 'react-router-dom'
 
 
-const Cart = ({ cart  }) => {
+const Cart = ({ cart ,handleEmptyCart ,handleRemove, handleUpdateCartQty  }) => {
     const classes = useStyles();
     //console.log(cart.line_items.length);
 
-    const EmptyCart=()=>{
+    const EmptyCart=()=>(
         <Typography className={classes.title} variant="subtitle1" >You have no items in your cart
-        <Link to="/" className={classes.link}>Start Adding </Link>
+        <Link to="/" className={classes.link}> Start Adding </Link>
         </Typography>
-    };
+    );
 
     const FilledCart=()=>(
         <>
@@ -22,7 +22,7 @@ const Cart = ({ cart  }) => {
                     cart.line_items.map((item)=>(
 
                         <Grid item xs={12} sm={4} key={item.id}>
-                            <CartItem item={item}/>
+                            <CartItem item={item} handleUpdateCartQty={handleUpdateCartQty} handleRemove={handleRemove}/>
                         </Grid>
 
                     ))
@@ -33,7 +33,7 @@ const Cart = ({ cart  }) => {
                         Subtotal:{cart.subtotal.formatted_with_symbol}
                     </Typography>
                     <div>
-                        <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty cart</Button>
+                        <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
                         <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
                     </div>
 
@@ -47,7 +47,7 @@ const Cart = ({ cart  }) => {
             <div className={classes.toolbar}/>
             <Typography className={classes.title} variant='h3' gutterBottom >Your Shopping cart</Typography>
             {
-                 !cart.line_items.length? <EmptyCart/>:<FilledCart />
+                 !cart.line_items.length ? <EmptyCart/>:<FilledCart />
                 
             }
         </Container>
