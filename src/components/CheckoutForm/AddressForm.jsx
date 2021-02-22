@@ -3,7 +3,7 @@ import React from 'react'
 const AddressForm = () => {
     return (
         <div>
-            Address Form
+            AddressForm
         </div>
     )
 }
