@@ -3,8 +3,11 @@ import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import Review from './Review'
+const dotenv=require('dotenv');
+dotenv.config();
 
-const stripePromise=loadStripe('');
+
+const stripePromise=loadStripe('pk_test_51I7UG8LkESbm4VxOa86fKB1vppJgwGnfbhfW6MJymzM6lLq2QNTUjuxVnQ4PzfGYibhO2zQ7hnJN38Iib4IUdkjd00yK0dNEeR');
 
 const PaymentForm = ({checkoutToken, backStep , timeout,shippingData,onCaptureCheckout , nextStep}) => {
     
