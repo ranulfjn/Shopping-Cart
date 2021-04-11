@@ -7,7 +7,7 @@ const dotenv=require('dotenv');
 dotenv.config();
 
 
-const stripePromise=loadStripe('pk_test_51I7UG8LkESbm4VxOa86fKB1vppJgwGnfbhfW6MJymzM6lLq2QNTUjuxVnQ4PzfGYibhO2zQ7hnJN38Iib4IUdkjd00yK0dNEeR');
+const stripePromise=loadStripe(process.env.REACT_APP_STRIPE);
 
 const PaymentForm = ({checkoutToken, backStep , timeout,shippingData,onCaptureCheckout , nextStep}) => {
     
